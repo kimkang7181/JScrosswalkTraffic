@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <style>
+            .trf1 {
+                width: 2%;
+                position: absolute;
+                top: 38%;
+                left: 15%;    
+            }
+            .trf2 {
+                width: 4%;
+                position: absolute;
+                top: 32%;
+                left: 18%;
+            }
+            .trf3 {
+                width: 2%;
+                position: absolute;
+                top: 38%;
+                left: 23%;    
+            }    
+            .trf4 {
+                width: 4%;
+                position: absolute;
+                top: 50%;
+                left: 18%;
+            }
+            /* #red_car {
+                padding-right: 60%;
+            }
+            #red_car2{
+                padding-bottom: 7%;    
+            } */
+            #mtrr{
+                position: absolute ;
+                left: 8.5%;
+                top: 26%;
+                
+            }
+            #mtrr2 {
+                position: absolute ;
+                left: 12%;
+                top: 17.5%;
+                
+            }
+            #mtrr3 {
+                position: absolute ;
+                left: 30%;
+                top: 26%;
+                
+            }
+            #mtrr4 {
+                position: absolute ;
+                left: 12%;
+                top: 65%;
+            }  
+            
+        </style>
+    </head>
+    <body id="body" style="background-image:url(images/big_crossroad.png); background-size: 40%; background-repeat: no-repeat">
+        <div>
+            <img src="images/tr1.png" id="trf1" class="trf1" >
+            <img src="images/tr2.png" id="trf2" class="trf2" >
+            <img src="images/tr3.png" id="trf3" class="trf3" >
+            <img src="images/tr4.png" id="trf4" class="trf4" >
+
+            <img id="car" >
+            <img id="red_car" >
+            <img id="car2" >
+            <img id="red_car2">
+            <img id="man1"  >
+            <img id="man2"  >
+            <img id="man3"  >
+            <img id="man4"  >
+            <!-- <img id="mtrg" height="50px" src='images/mtrgreen.png' > -->
+            <!-- <img id="mtrg2" width="50px" src='images/mtrgreen2.png' > -->
+
+            
+            <img id="mtrr" height="50px" src="images/mtrred.png" >
+
+            <img id="mtrr2" width="50px" src="images/mtrred2.png" >
+            <img id="mtrr3" height="50px" src="images/mtrred.png" >
+            <img id="mtrr4" width="50px" src="images/mtrred2.png" >
+        </div>
+        <!-- <input type="button" value="끄기" onclick="imgToggle()" style="display:block;">
+        <input type="button" value="이미지 변경" onclick="startTraffic();"> -->
+    </body>
+    <script>
+        var trf1Con, trf2Con, trf3Con, trf4Con;
+        var mtrr1Con, mtrr2Con, mtrr3Con, mtrr4Con;
+        function changeGreenT1(){
+            trf1.src="images/green.png";
+            trf2.src="images/red2.png";
+            trf3.src="images/red.png";
+            trf4.src="images/red2.png";
+            mtrr4.src="images/mtrgreen2.png";
+            mtrr1Con = 3;
+            mtrr2Con = 3;
+            mtrr3Con = 3;
+            mtrr4Con = 1;
+            trf1Con = 1;
+            trf2Con = 3;
+            trf3Con = 3;
+            trf4Con = 3;
+            if (trf1Con==1){
+                    animate = setTimeout(moveCar, 20);
+                    animate = setTimeout(goMan4, 20);
+                }
+            if (trf2Con==1){
+                    animate = setTimeout(moveCar2, 20);
+                    animate = setTimeout(goMan1, 20);
+                }
+            if (trf3Con==1){
+                    animate = setTimeout(moveRedcar, 20);
+                    animate = setTimeout(goMan2, 20);
+                }
+            if (trf4Con==1){
+                    animate = setTimeout(moveRedcar2, 20);
+                    animate = setTimeout(goMan3, 20);
+                } 
+        }
+        function changeYellowT1(){
+            trf1.src="images/yellow.png";
+            trf2.src="images/red2.png";
+            trf3.src="images/red.png";
+            trf4.src="images/red2.png";
+            mtrr4.src="images/mtrred2.png";
+            mtrr1Con = 3;
+            mtrr2Con = 3;
+            mtrr3Con = 3;
+            mtrr4Con = 3;
+            trf1Con = 2;
+            trf2Con = 3;
+            trf3Con = 3;
+            trf4Con = 3;
+            if (trf1Con==1){
+                    animate = setTimeout(moveCar, 20);
+                    animate = setTimeout(goMan4, 20);
+                }
+            if (trf2Con==1){
+                    animate = setTimeout(moveCar2, 20);
+                    animate = setTimeout(goMan1, 20);
+                }
+            if (trf3Con==1){
+                    animate = setTimeout(moveRedcar, 20);
+                    animate = setTimeout(goMan2, 20);
+                }
+            if (trf4Con==1){
+                    animate = setTimeout(moveRedcar2, 20);
+                    animate = setTimeout(goMan3, 20);
+                }
+        }
+        function changeGreenT2(){
+            trf1.src="images/red.png";
+            trf2.src="images/green2.png";
+            trf3.src="images/red.png";
+            trf4.src="images/red2.png";
+            mtrr.src="images/mtrgreen.png";
+            mtrr1Con = 1;
+            mtrr2Con = 3;
+            mtrr3Con = 3;
+            mtrr4Con = 3;
+            trf1Con = 3;
+            trf2Con = 1;
+            trf3Con = 3;
+            trf4Con = 3;
+            if (trf1Con==1){
+                    animate = setTimeout(moveCar, 20);
+                    animate = setTimeout(goMan4, 20);
+                }
+            if (trf2Con==1){
+                    animate = setTimeout(moveCar2, 20);
+                    animate = setTimeout(goMan1, 20);
+                }
+            if (trf3Con==1){
+                    animate = setTimeout(moveRedcar, 20);
+                    animate = setTimeout(goMan2, 20);
+                }
+            if (trf4Con==1){
+                    animate = setTimeout(moveRedcar2, 20);
+                    animate = setTimeout(goMan3, 20);
+                }
+        }
+        function changeYellowT2(){
+            trf1.src="images/red.png";
+            trf2.src="images/yellow2.png";
+            trf3.src="images/red.png";
+            trf4.src="images/red2.png";
+            mtrr.src="images/mtrred.png";
+            mtrr1Con = 3;
+            mtrr2Con = 3;
+            mtrr3Con = 3;
+            mtrr4Con = 3;
+            trf1Con = 3;
+            trf2Con = 2;
+            trf3Con = 3;
+            trf4Con = 3;
+            if (trf1Con==1){
+                    animate = setTimeout(moveCar, 20);
+                    animate = setTimeout(goMan4, 20);
+                }
+            if (trf2Con==1){
+                    animate = setTimeout(moveCar2, 20);
+                    animate = setTimeout(goMan1, 20);
+                }
+            if (trf3Con==1){
+                    animate = setTimeout(moveRedcar, 20);
+                    animate = setTimeout(goMan2, 20);
+                }
+            if (trf4Con==1){
+                    animate = setTimeout(moveRedcar2, 20);
+                    animate = setTimeout(goMan3, 20);
+                }
+        }
+        function changeGreenT3(){
+            trf1.src="images/red.png";
+            trf2.src="images/red2.png";
+            trf3.src="images/green.png";
+            trf4.src="images/red2.png";
+            mtrr2.src="images/mtrgreen2.png";
+            mtrr1Con = 3;
+            mtrr2Con = 1;
+            mtrr3Con = 3;
+            mtrr4Con = 3;
+            trf1Con = 3;
+            trf2Con = 3;
+            trf3Con = 1;
+            trf4Con = 3;
+            if (trf1Con==1){
+                    animate = setTimeout(moveCar, 20);
+                    animate = setTimeout(goMan4, 20);
+                }
+            if (trf2Con==1){
+                    animate = setTimeout(moveCar2, 20);
+                    animate = setTimeout(goMan1, 20);
+                }
+            if (trf3Con==1){
+                    animate = setTimeout(moveRedcar, 20);
+                    animate = setTimeout(goMan2, 20);
+                }
+            if (trf4Con==1){
+                    animate = setTimeout(moveRedcar2, 20);
+                    animate = setTimeout(goMan3, 20);
+                }
+        }
+        function changeYellowT3(){
+            trf1.src="images/red.png";
+            trf2.src="images/red2.png";
+            trf3.src="images/yellow.png";
+            trf4.src="images/red2.png";
+            mtrr2.src="images/mtrred2.png";
+            mtrr1Con = 3;
+            mtrr2Con = 3;
+            mtrr3Con = 3;
+            mtrr4Con = 3;
+            trf1Con = 3;
+            trf2Con = 3;
+            trf3Con = 2;
+            trf4Con = 3;
+            if (trf1Con==1){
+                    animate = setTimeout(moveCar, 20);
+                    animate = setTimeout(goMan4, 20);
+                }
+            if (trf2Con==1){
+                    animate = setTimeout(moveCar2, 20);
+                    animate = setTimeout(goMan1, 20);
+                }
+            if (trf3Con==1){
+                    animate = setTimeout(moveRedcar, 20);
+                    animate = setTimeout(goMan2, 20);
+                }
+            if (trf4Con==1){
+                    animate = setTimeout(moveRedcar2, 20);
+                    animate = setTimeout(goMan3, 20);
+                }
+        }
+        function changeGreenT4(){
+            trf1.src="images/red.png";
+            trf2.src="images/red2.png";
+            trf3.src="images/red.png";
+            trf4.src="images/green2.png";
+            mtrr3.src="images/mtrgreen.png";
+            mtrr1Con = 3;
+            mtrr2Con = 3;
+
+            mtrr3Con = 1;
+            mtrr4Con = 3;
+            trf1Con = 3;
+            trf2Con = 3;
+            trf3Con = 3;
+            trf4Con = 1;
+            if (trf1Con==1){
+                    animate = setTimeout(moveCar, 20)   
+                    animate = setTimeout(goMan4, 20);
+                }
+            if (trf2Con==1){
+                    animate = setTimeout(moveCar2, 20);
+                    animate = setTimeout(goMan1, 20);
+                }
+            if (trf3Con==1){
+                    animate = setTimeout(moveRedcar, 20);
+                    animate = setTimeout(goMan2, 20);
+                }
+            if (trf4Con==1){
+                    animate = setTimeout(moveRedcar2, 20);
+                    animate = setTimeout(goMan3, 20);
+                }
+        }
+        function changeYellowT4(){
+            trf1.src="images/red.png";
+            trf2.src="images/red2.png"; 
+            trf3.src="images/red.png";
+            trf4.src="images/yellow2.png";
+            mtrr3.src="images/mtrred.png";
+            mtrr1Con = 3;
+            mtrr2Con = 3;
+            mtrr3Con = 3;
+            mtrr4Con = 3;
+            trf1Con = 3;
+            trf2Con = 3;
+            trf3Con = 3;
+            trf4Con = 2;
+            if (trf1Con==1){
+                    animate = setTimeout(moveCar, 20);
+                    animate = setTimeout(goMan4, 20);
+                }
+            if (trf2Con==1){
+                    animate = setTimeout(moveCar2, 20);
+                    animate = setTimeout(goMan1, 20);
+                }
+            if (trf3Con==1){
+                    animate = setTimeout(moveRedcar, 20);
+                    animate = setTimeout(goMan2, 20);
+                }
+            if (trf4Con==1){
+                    animate = setTimeout(moveRedcar2, 20);
+                    animate = setTimeout(goMan3, 20);
+                }   
+        }
+        function startTraffic(){
+            setTimeout(function(){changeGreenT1();}, 100);
+            setTimeout(function(){changeYellowT1();}, 4000);
+            setTimeout(function(){changeGreenT2();}, 5500);    
+            setTimeout(function(){changeYellowT2();}, 8500);       
+            setTimeout(function(){changeGreenT3();}, 10000);
+            setTimeout(function(){changeYellowT3();}, 13000);
+            setTimeout(function(){changeGreenT4();}, 14500);
+            setTimeout(function(){changeYellowT4();}, 17500);
+            setTimeout(function(){startTraffic();}, 19000);   
+                     
+        };
+        var animate;
+        var no = undefined;
+        make(car , "images/car.png", "90px", no, '43%',"0px" );
+            make(red_car, "images/redcar.png", "80px", no, "38%", "0px",);
+            make(car2, "images/car2.png", no, "90px", "0px", "15%");
+            make(red_car2, "images/redcar2.png", no, "80px", "0px",  );
+            make(man1, "images/man1.png", no, "45px", no, "0px", no, "10.5%", no, "19%" );
+            make(man2, "images/man2.png", no, "45px", "24%", no, no, "0px", no, no, no, "12.5%");
+            make(man3, "images/man3.png", no, "45px", "0px", no, no, "26%", "12.3%");
+            make(man4, "images/man4.png", no, "45px", no, no, "0px", no, "26%", no, "72%");
+        function init(){
+            // var car, car2, red_car, red_car2, man1, man2, man3, man4;
+
+            makeCar();
+            // var cars = [[car, red_car, car2, red_car2, man1, man2, man3, man4] ]
+            // for(i = 0; i < 1; i++){
+            //     cars[i][0].style.position = 'absolute'; //car init 구문
+            //     cars[i][0].style.left = '0px';
+            //     cars[i][0].style.top = '43%';
+                
+            //     cars[i][1].style.position = 'absolute'; //redcar
+            //     cars[i][1].style.right = '0px';
+            //     cars[i][1].style.top = '38%';
+
+            //     cars[i][2].style.position = 'absolute'; //car2
+            //     cars[i][2].style.left = '15%';
+            //     cars[i][2].style.top = '0px';
+
+            //     cars[i][3].style.position = 'absolute'; //redcar2
+            //     cars[i][3].style.right = '77%';
+            //     cars[i][3].style.bottom = '0px';
+
+            //     cars[i][4].style.bottom = '0px';        //man1
+            //     cars[i][4].style.position = "absolute";
+            //     cars[i][4].style.left = "10.5%";
+            //     cars[i][4].style.paddingBottom = "19%";
+
+            //     cars[i][5].style.left = '0px';          //man2
+            //     cars[i][5].style.position = "absolute";
+            //     cars[i][5].style.top = "24%";
+            //     cars[i][5].style.paddingLeft = "12.5%";
+
+            //     cars[i][6].style.top = '0px';           //man3
+            //     cars[i][6].style.position = "absolute";
+            //     cars[i][6].style.left = "26%";
+            //     cars[i][6].style.paddingTop = "12.3%";
+
+            //     cars[i][7].style.right = '0px';         //man4
+            //     cars[i][7].style.position = "absolute";
+            //     cars[i][7].style.paddingRight = "72%";
+            //     cars[i][7].style.paddingTop= "26%";
+               
+            // }
+            startTraffic();
+
+        }
+            //     function make(testcar1, carSrc, carWidth = 'initial', carHeight = 'auto', carTop = 'auto', carBottom = 'auto', carRight = 'auto', carLeft = 'auto', carPaddingTop = 'auto', carPaddingBottom = 'auto', carPaddingRight = 'auto', carPaddingLeft = 'auto'){
+
+            //     testCar1 = document.createElement('img');
+            //     testCar1.id = testcar1.id
+            //     testCar1.src = carSrc;
+            //     testCar1.style.width = carWidth;
+            //     testCar1.style.height = carHeight;
+            //     testCar1.style.position = "absolute";
+            //     testCar1.style.top = carTop;
+            //     testCar1.style.bottom = carBottom;
+                
+            //     testCar1.style.left = carLeft;
+            //     testCar1.style.right = carRight;
+            //     testCar1.style.paddingTop = carPaddingTop;
+            //     testCar1.style.paddingBottom = carPaddingBottom;
+            //     testCar1.style.paddingRight = carPaddingRight;
+            //     testCar1.style.paddingLeft = carPaddingLeft;
+                
+            //     document.getElementById('body').appendChild(testCar1);
+            // };
+        function make(testcar1, carSrc, carWidth = 'initial', carHeight = 'auto', carTop = 'auto', carLeft = 'auto'){
+
+                testCar1 = document.createElement('img');
+                testCar1.id = testcar1.id
+                testCar1.src = carSrc;
+                testCar1.style.width = carWidth;
+                testCar1.style.height = carHeight;
+                testCar1.style.position = "absolute";
+                testCar1.style.top = carTop;
+                
+                testCar1.style.left = carLeft;
+                
+                document.getElementById('body').appendChild(testCar1);
+            };
+        function makeCar(){
+            make(car , "images/car.png", "90px", no, '43%',"0px" );
+            make(red_car, "images/redcar.png", "80px", no, "38%", no, "0px", no, no, no, no, "68%" );
+            make(car2, "images/car2.png", no, "90px", "0px", no, no, "15%" );
+            make(red_car2, "images/redcar2.png", no, "80px", no, "0px", "77%", no, no, "0px" );
+            make(man1, "images/man1.png", no, "45px", no, "0px", no, "10.5%", no, "19%" );
+            make(man2, "images/man2.png", no, "45px", "24%", no, no, "0px", no, no, no, "12.5%");
+            make(man3, "images/man3.png", no, "45px", "0px", no, no, "26%", "12.3%");
+            make(man4, "images/man4.png", no, "45px", no, no, "0px", no, "26%", no, "72%");
+            var car1;
+        };
+        function moveCar() {
+            
+            // var carNum = Math.floor(Math.random(1) * 100) + 10;
+            car.style.left = parseInt(car.style.left) + 5 +'px';
+            if (parseInt(car.style.left) == 70 && trf1Con == 3){
+                // for(var i; i<35; i++){
+                //     car.style.left = parseInt(car.style.left) + 2 +'px';
+                // }   
+            }
+            
+            else{
+                animate = setTimeout(moveCar, 20);
+                if (parseInt(car.style.left) >= 540){
+                    car.style.left = 0;
+                }
+            }
+        }
+        function moveRedcar() {
+            red_car.style.left = parseInt(red_car.style.left) - 5 +'px';  //변경
+            
+            if (parseInt(red_car.style.left) ==70 && trf3Con==3){
+
+            }
+            else{
+                animate = setTimeout(moveRedcar, 20);
+                if(parseInt(red_car.style.left) >= 543){
+                    red_car.style.left = 0;
+                }
+            }
+        }
+        function moveCar2() {
+            car2.style.top = parseInt(car2.style.top) + 5 +'px';
+            
+            if (parseInt(car2.style.top) == 70&& trf2Con==3){
+                
+            }
+            else{
+                animate = setTimeout(moveCar2, 20);
+                if(parseInt(car2.style.top) >= 540){
+                    car2.style.top = 0;
+                }
+            }
+        }
+        function moveRedcar2() {
+            red_car2.style.top = parseInt(red_car2.style.top) - 5 +'px';  //변경
+            
+            if (parseInt(red_car2.style.top) == 70    && trf4Con == 3){
+                
+            }
+            else{
+                animate = setTimeout(moveRedcar2, 20);
+                if(parseInt(red_car2.style.top) >= 543){
+                    red_car2.style.top = 0;
+                }
+            }
+        }
+        function goMan1(){
+            man1.style.top = parseInt(man1.style.top) - 3 +'px'; //변경
+            
+            if (parseInt(man1.style.top) ==3  && mtrr1Con == 3){
+                
+            }
+            else{
+                animate = setTimeout(goMan1, 20);
+                if(parseInt(man1.style.bottom) >=180){
+                    man1.style.bottom = 0;
+                }
+            }
+
+        }
+        function goMan2(){
+            man2.style.left = parseInt(man2.style.left) + 3 +'px';
+            
+            if (parseInt(man2.style.left) ==3  && mtrr2Con == 3){
+                
+            }
+            else{
+                animate = setTimeout(goMan2, 20);
+                if(parseInt(man2.style.left) >= 180){
+                    man2.style.left = 0;
+                }
+            }
+
+        }
+        function goMan3(){
+            man3.style.top = parseInt(man3.style.top) + 3 +'px';
+            
+            if (parseInt(man3.style.top) == 3 && mtrr3Con == 3){
+                
+            }
+            else{
+                animate = setTimeout(goMan3, 20);
+                if(parseInt(man3.style.top) >= 180){
+                    man3.style.top = 0;
+                }
+            }
+
+        }
+        function goMan4(){
+            man4.style.left = parseInt(man4.style.left) - 3 +'px'; //변경
+            
+            if ((parseInt(man4.style.left) ==3)  && (mtrr4Con == 3)){
+                
+            }
+            else{
+                animate = setTimeout(goMan4, 20);
+                if(parseInt(man4.style.left) >= 180){
+                    man4.style.left = 0;
+                }
+            }
+
+        }
+
+        window.onload = init;
+    </script>
+</html>
